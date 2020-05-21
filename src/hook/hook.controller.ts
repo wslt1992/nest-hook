@@ -26,7 +26,6 @@ export class HookController {
   @UseInterceptors(LoggingInterceptor)
   @UseFilters(HttpExceptionFilter)
   getHello(@Query() query: HelloDto): string {
-    // throw new ForbiddenException()
     console.log('hook controller',query)
     return this.hookService.getHello();
   }

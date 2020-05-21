@@ -18,4 +18,10 @@ export class AppController {
     // req.user可能是守卫里面的程序更改的
     return this.authService.login(req.user)
   }
+
+  @UseGuards(AuthGuard('jwt'))
+  @Get('profile')
+  getProfile(@Request() req) {
+    return req.user;
+  }
 }

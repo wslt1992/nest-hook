@@ -40,8 +40,9 @@ export class AuthService {
   // 登录，签发token
   async login(user: any) {
     const payload = { username: user.username, sub: user.userId };
-    return {
+    /*return {
       accessToken: this.jwtService.sign(payload),
-    };
+    };*/
+    return this.jwtService.sign(payload)
   }
 }

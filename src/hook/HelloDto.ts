@@ -1,9 +1,9 @@
-import { IsNotEmpty, IsNumber } from 'class-validator';
+import { IsNotEmpty, IsNumber, IsNumberString, IsString } from 'class-validator';
 
 export class HelloDto {
   @IsNotEmpty()
   readonly name: string;
 
-  @IsNumber()
+  @IsNumberString()
   readonly age: number;
 }
