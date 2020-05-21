@@ -1,9 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import User from './User';
+import { JwtService } from '@nestjs/jwt';
 @Injectable()
 export class AuthService {
   private readonly users: User[];
-  constructor() {
+  constructor(private readonly jwtService: JwtService) {
     this.users = [
       {
         userId: 1,
@@ -35,5 +36,12 @@ export class AuthService {
       return result;
     }
     return null;
+  }
+  // 登录，签发token
+  async login(user: any) {
+    const payload = { username: user.username, sub: user.userId };
+    return {
+      accessToken: this.jwtService.sign(payload),
+    };
   }
 }
