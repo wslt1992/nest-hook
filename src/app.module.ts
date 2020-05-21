@@ -3,9 +3,11 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { HookModule } from './hook/hook.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
+import { AuthModule } from './auth/auth.module';
+
 
 @Module({
-  imports: [HookModule],
+  imports: [HookModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })
