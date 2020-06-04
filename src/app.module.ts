@@ -4,10 +4,12 @@ import { AppService } from './app.service';
 import { HookModule } from './hook/hook.module';
 import { LoggerMiddleware } from './middleware/logger.middleware';
 import { AuthModule } from './auth/auth.module';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Photo } from './entity/photo.entity';
 
 
 @Module({
-  imports: [HookModule, AuthModule],
+  imports: [TypeOrmModule.forRoot(),HookModule, AuthModule],
   controllers: [AppController],
   providers: [AppService],
 })

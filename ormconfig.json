@@ -1,0 +1,13 @@
+{
+  "type": "mysql",
+  "host": "localhost",
+  "port": 3306,
+  "username": "root",
+  "password": "123456",
+  "database": "nest-test",
+   "//":"这是英文文档的写法，中文文档没有更新",
+  "entities": ["dist/**/*.entity{.ts,.js}"],
+  "//":"这个字段为true，可以自动引入entities",
+  "//":"autoLoadEntities:true",
+  "synchronize": true
+}

@@ -29,4 +29,9 @@ export class HookController {
     console.log('hook controller',query)
     return this.hookService.getHello();
   }
+
+  @Get('getAllPhoto')
+  getAllPhoto(){
+    return this.hookService.findAll()
+  }
 }
